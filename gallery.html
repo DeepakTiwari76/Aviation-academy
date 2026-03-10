@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery | Bluestar Airways Academy</title>
+    <meta name="description" content="Explore the life at Bluestar Airways. Glimpses of our world-class training, high-tech simulators, and student achievements.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 7267853993</span>
+                    <span><i class="fas fa-envelope"></i> info@bluestarairways.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">BLUESTAR <span class="highlight">AIRWAYS</span></span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-secondary">Apply Now</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Gallery Hero Banner -->
+        <section class="sub-hero gallery-hero">
+            <div class="sub-hero-overlay blue-bottom-overlay"></div>
+            <div class="container">
+                <div class="sub-hero-content">
+                    <h1>Life at Bluestar Airways</h1>
+                    <p class="hero-subheading">Glimpses of our world-class training and student achievements</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Gallery Category Filter -->
+        <section class="gallery-filter-section section-padding">
+            <div class="container">
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="campus">Campus & Infrastructure</button>
+                    <button class="filter-btn" data-filter="cockpit">Cockpit Training</button>
+                    <button class="filter-btn" data-filter="cabin">Cabin Crew & Grooming</button>
+                    <button class="filter-btn" data-filter="events">Convocation & Events</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Photo Gallery Grid -->
+        <section class="photo-gallery section-padding">
+            <div class="container">
+                <div class="gallery-grid" id="lightgallery">
+                    <!-- Cockpit -->
+                    <div class="gallery-item cockpit">
+                        <a href="images/gallery-cockpit.png">
+                            <img src="images/gallery-cockpit.png" alt="Cockpit Training">
+                            <div class="item-overlay"><i class="fas fa-plus"></i></div>
+                        </a>
+                    </div>
+                    <!-- Campus -->
+                    <div class="gallery-item campus">
+                        <a href="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=1200&q=80">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=600&q=80" alt="Campus Library">
+                            <div class="item-overlay"><i class="fas fa-plus"></i></div>
+                        </a>
+                    </div>
+                    <!-- Cabin -->
+                    <div class="gallery-item cabin">
+                        <a href="images/cabin-simulator.png">
+                            <img src="images/cabin-simulator.png" alt="Cabin Crew Training">
+                            <div class="item-overlay"><i class="fas fa-plus"></i></div>
+                        </a>
+                    </div>
+                    <!-- Events -->
+                    <div class="gallery-item events">
+                        <a href="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80">
+                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80" alt="Graduation Ceremony">
+                            <div class="item-overlay"><i class="fas fa-plus"></i></div>
+                        </a>
+                    </div>
+                    <!-- Cockpit 2 -->
+                    <div class="gallery-item cockpit">
+                        <a href="images/simulator.png">
+                            <img src="images/simulator.png" alt="Advanced Simulator">
+                            <div class="item-overlay"><i class="fas fa-plus"></i></div>
+                        </a>
+                    </div>
+                    <!-- Campus 2 -->
+                    <div class="gallery-item campus">
+                        <a href="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80">
+                            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="High-Tech Classroom">
+                            <div class="item-overlay"><i class="fas fa-plus"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Video Gallery -->
+        <section class="video-gallery section-padding bg-light-grey">
+            <div class="container">
+                <div class="container-title">
+                    <h2>Video <span>Glimpses</span></h2>
+                    <p>Experience our training in action through these short clips.</p>
+                </div>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&w=600&q=80" alt="Solo Flight">
+                            <div class="play-btn-wrapper">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                            </div>
+                        </div>
+                        <h3>Takeoff: Student Pilot's First Solo Flight</h3>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=600&q=80" alt="Safety Drill">
+                            <div class="play-btn-wrapper">
+                                <div class="play-btn"><i class="fas fa-play"></i></div>
+                            </div>
+                        </div>
+                        <h3>Emergency Drill: Cabin Crew Safety Training</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Media Coverage & News -->
+        <section class="media-coverage section-padding">
+            <div class="container">
+                <div class="container-title">
+                    <h2>Bluestar Airways <span>in the News</span></h2>
+                </div>
+                <div class="media-marquee">
+                    <div class="marquee-track">
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=TIMES+AVIATION" alt="News Logo"></div>
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=GLOBAL+NEWS" alt="News Logo"></div>
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=AIRLINE+WEEKLY" alt="News Logo"></div>
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=SKY+TODAY" alt="News Logo"></div>
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=INDUSTRY+INSIGHT" alt="News Logo"></div>
+                        <!-- Duplicate for loop -->
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=TIMES+AVIATION" alt="News Logo"></div>
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=GLOBAL+NEWS" alt="News Logo"></div>
+                        <div class="media-logo"><img src="https://via.placeholder.com/150x80?text=AIRLINE+WEEKLY" alt="News Logo"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Instagram Social Feed -->
+        <section class="social-feed">
+            <div class="container">
+                <div class="container-title">
+                    <h2>Stay Updated <span>@BluestarAirways</span> <i class="fab fa-instagram" style="color: #E1306C;"></i></h2>
+                </div>
+            </div>
+            <div class="insta-row">
+                <div class="insta-img"><img src="https://images.unsplash.com/photo-1540339832862-47459980783f?auto=format&fit=crop&w=300&h=300&q=80" alt="Insta"></div>
+                <div class="insta-img"><img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=300&h=300&q=80" alt="Insta"></div>
+                <div class="insta-img"><img src="https://images.unsplash.com/photo-1474487053594-554473950bb4?auto=format&fit=crop&w=300&h=300&q=80" alt="Insta"></div>
+                <div class="insta-img"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&w=300&h=300&q=80" alt="Insta"></div>
+                <div class="insta-img"><img src="https://images.unsplash.com/photo-1569629743410-845b88bb18ad?auto=format&fit=crop&w=300&h=300&q=80" alt="Insta"></div>
+                <div class="insta-img"><img src="https://images.unsplash.com/photo-1519011985187-444d62641929?auto=format&fit=crop&w=300&h=300&q=80" alt="Insta"></div>
+            </div>
+        </section>
+
+        <!-- Section 7: Visit Us CTA -->
+        <section class="visit-cta">
+            <div class="container">
+                <h2>Want to see our facilities in person? Book a campus tour today!</h2>
+                <a href="#contact" class="btn btn-navy-visit">Schedule a Visit</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <span class="logo-text" style="color: white;">BLUESTAR <span class="highlight">AIRWAYS</span></span>
+                </div>
+                <p class="about-snippet">Bluestar Airways is India's premier aviation academy, dedicated to providing world-class training and mentorship for aspiring pilots and cabin crew members.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> 123, Aviation Plaza, Sector 18, Delhi/NCR, India</li>
+                    <li><i class="fas fa-phone"></i> +91 7267853993</li>
+                    <li><i class="fas fa-envelope"></i> info@bluestarairways.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for latest updates on courses and aviation news.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-strip">
+            <div class="container">
+                <p>&copy; 2026 Bluestar Airways Academy. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+                <p>Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS for Lightbox & Filtering -->
+    <script src="main.js"></script>
+</body>
+</html>

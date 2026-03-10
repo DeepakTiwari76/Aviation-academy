@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bluestar Airways Aviation Academy</title>
+    <meta name="description" content="Get in touch with Bluestar Airways. Our expert team is here 24/7 to guide your aviation career. Contact us for inquiries, counseling, and campus tours.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +91 7267853993</span>
+                    <span><i class="fas fa-envelope"></i> info@bluestarairways.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">BLUESTAR <span class="highlight">AIRWAYS</span></span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-secondary">Apply Now</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Contact Hero Banner -->
+        <section class="sub-hero contact-hero">
+            <div class="sub-hero-overlay navy-overlay-60"></div>
+            <div class="container">
+                <div class="sub-hero-content">
+                    <h1>Get In Touch</h1>
+                    <p class="hero-subtext">Our team is here to guide your aviation career 24/7.</p>
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Contact Us</span>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Contact Info Cards -->
+        <section class="contact-cards-section section-padding">
+            <div class="container">
+                <div class="contact-info-grid">
+                    <!-- Card 1 -->
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Our Head Office</h3>
+                        <p>123, Aviation Plaza, Sector 18,<br>Gurugram, Delhi/NCR, India</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <h3>Call Us</h3>
+                        <p>+91 7267853993 (Admission)<br>+91 124 456 7890 (Landline)</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Email Support</h3>
+                        <p>admissions@bluestarairways.in<br>info@bluestarairways.in</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Main Inquiry Form & Location Details -->
+        <section class="inquiry-section section-padding bg-light-grey">
+            <div class="container">
+                <div class="inquiry-grid">
+                    <div class="inquiry-form-col">
+                        <div class="form-wrapper">
+                            <h2>Send Us a Message</h2>
+                            <p>Fill out the form below and our counselor will reach out to you within 2 business hours.</p>
+                            <form id="contact-page-form" class="main-contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Full Name*</label>
+                                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email Address*</label>
+                                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number*</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="course">Selected Course*</label>
+                                        <select id="course" name="course" required>
+                                            <option value="" disabled selected>Select a Course</option>
+                                            <option value="cpl">Commercial Pilot License (CPL)</option>
+                                            <option value="cabin-crew">Cabin Crew Training</option>
+                                            <option value="ground-staff">Ground Staff Management</option>
+                                            <option value="airport-management">Airport Management</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject*</label>
+                                    <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message*</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-navy-submit">Send Message</button>
+                                <div id="form-success" class="form-message success-message">Thank you! Our counselor will call you shortly.</div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="inquiry-info-col">
+                        <div class="office-hours-box">
+                            <h3><i class="fas fa-clock"></i> Office Hours</h3>
+                            <ul class="hours-list">
+                                <li><span>Monday - Saturday:</span> <span>9:00 AM - 6:00 PM</span></li>
+                                <li><span>Sunday:</span> <span class="closed">Closed</span></li>
+                            </ul>
+                            <div class="gov-badge-box">
+                                <div class="badge-icon"><i class="fas fa-shield-alt"></i></div>
+                                <div class="badge-text">
+                                    <strong>GOVERNMENT APPROVED</strong>
+                                    <span>Official Counseling Center</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Google Maps Integration -->
+        <section class="map-section">
+            <div class="map-gold-divider"></div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14030.54716773343!2d77.059437!3d28.4604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x21ae62602daabc0!2sSector%2018%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Section 5: Our Presence (Branches) -->
+        <section class="presence-section section-padding">
+            <div class="india-watermark"></div>
+            <div class="container">
+                <div class="container-title">
+                    <h2>Our <span>Presence</span></h2>
+                    <p>Visit our training centers across major Indian cities.</p>
+                </div>
+                <div class="presence-grid">
+                    <div class="city-box">
+                        <h3>Delhi (HQ)</h3>
+                        <a href="#" class="direction-link">Get Direction <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="city-box">
+                        <h3>Mumbai</h3>
+                        <a href="#" class="direction-link">Get Direction <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="city-box">
+                        <h3>Bangalore</h3>
+                        <a href="#" class="direction-link">Get Direction <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="city-box">
+                        <h3>Jaipur</h3>
+                        <a href="#" class="direction-link">Get Direction <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: FAQ Quick Links -->
+        <section class="quick-support-section section-padding bg-light-grey">
+            <div class="container">
+                <div class="container-title">
+                    <h2>Quick <span>Support</span></h2>
+                    <p>Common questions about visiting our campus.</p>
+                </div>
+                <div class="support-accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>How to reach the campus?</h3>
+                            <div class="icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Our head office is located in Sector 18, Gurugram, which is easily accessible via the Yellow Line Metro (IFFCO Chowk Station) and NH-48.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Can I book a virtual counseling?</h3>
+                            <div class="icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Yes, we offer virtual counseling sessions via Zoom or Google Meet. Please fill out the inquiry form and mention "Virtual Session" in the subject.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Is there parking available?</h3>
+                            <div class="icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Yes, dedicated visitor parking is available at our head office for students and their parents.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <span class="logo-text" style="color: white;">BLUESTAR <span class="highlight">AIRWAYS</span></span>
+                </div>
+                <p class="about-snippet">Bluestar Airways is India's premier aviation academy, dedicated to providing world-class training and mentorship for aspiring pilots and cabin crew members.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="admission.html">Admission</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> 123, Aviation Plaza, Sector 18, Delhi/NCR, India</li>
+                    <li><i class="fas fa-phone"></i> +91 7267853993</li>
+                    <li><i class="fas fa-envelope"></i> info@bluestarairways.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for latest updates on courses and aviation news.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-strip">
+            <div class="container">
+                <p>&copy; 2026 Bluestar Airways Academy. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+                <p>Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="main.js"></script>
+</body>
+</html>

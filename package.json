@@ -1,0 +1,12 @@
+{
+  "name": "bluestar-airways",
+  "version": "1.0.0",
+  "description": "Bluestar Airways Aviation Academy Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
