@@ -1,7 +1,7 @@
 {
-  "name": "bluestar-airways",
+  "name": "flyhigh-institute",
   "version": "1.0.0",
-  "description": "Bluestar Airways Aviation Academy Website",
+  "description": "FLYHIGH INSTITUTE Aviation Academy Website",
   "main": "index.html",
   "scripts": {
     "start": "serve ."

@@ -21,6 +21,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -172,19 +173,67 @@ ul {
     display: none;
     cursor: pointer;
     flex-direction: column;
+    z-index: 1002;
+    padding: 10px;
 }
 
 .hamburger span {
-    width: 25px;
+    width: 28px;
     height: 3px;
     background-color: var(--primary-color);
-    margin: 2px 0;
+    margin: 3px 0;
     transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.nav-active .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.nav-active .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-active .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
 }
 
 @media (max-width: 992px) {
-    .nav-menu, .nav-cta {
-        display: none;
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden on the right */
+        width: 60%; /* Slightly more than half for better UX */
+        height: 100vh;
+        background: var(--accent-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+        transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        padding: 80px 40px;
+    }
+
+    .nav-cta {
+        display: none; /* Hide button in nav container for mobile */
+    }
+    
+    .nav-menu.active {
+        right: 0; /* Slide in to show */
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        font-size: 20px;
+        display: block;
+        padding: 10px;
     }
     
     .hamburger {
@@ -195,24 +244,47 @@ ul {
         display: block;
         margin-bottom: 5px;
     }
+
+    #main-header {
+        position: fixed; /* Fixed for more reliability on mobile */
+        top: 0;
+        left: 0;
+        background: var(--accent-color);
+        width: 100%;
+    }
+
+    /* Adjust page top to compensate for fixed header */
+    body {
+        padding-top: 110px; 
+    }
 }
 
-/* Mobile Menu State (will be handled by JS) */
-.nav-active .nav-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
+/* Lock scroll when menu is active */
+body.nav-active {
+    overflow: hidden;
+}
+
+/* Background Blur Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    background: var(--accent-color);
-    padding: 20px;
-    box-shadow: var(--shadow-medium);
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-smooth);
 }
 
-.nav-active .nav-menu li {
-    margin: 15px 0;
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
 }
+
 
 /* Hero Section */
 .hero {
@@ -551,6 +623,7 @@ ul {
     opacity: 0.03;
     z-index: 0;
     pointer-events: none;
+    max-width: 100%;
 }
 
 .grid-features {
@@ -645,32 +718,60 @@ ul {
 .logo-slider {
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
+    padding: 40px 0;
     position: relative;
+    background: white;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .logo-track {
     display: flex;
-    width: calc(200%);
-    animation: scroll 20s linear infinite;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+    align-items: center;
 }
 
-.logo-track img {
-    height: 80px;
-    margin: 0 40px;
-    filter: grayscale(1);
+.logo-box {
+    background: #fff;
+    padding: 20px 40px;
+    margin: 0 15px;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    height: 120px;
     transition: var(--transition-smooth);
-    object-fit: contain;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
-.logo-track img:hover {
+.logo-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: var(--secondary-color);
+}
+
+.logo-box img {
+    max-width: 140px;
+    max-height: 70px;
+    object-fit: contain;
+    filter: grayscale(0.2);
+    opacity: 0.8;
+    transition: var(--transition-smooth);
+}
+
+.logo-box:hover img {
     filter: grayscale(0);
+    opacity: 1;
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-50%); } 
 }
+
 
 .logo-slider:hover .logo-track {
     animation-play-state: paused;
@@ -2328,6 +2429,7 @@ h1, h2, h3, h4, h5, h6 {
     background: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/India_map_transparent.png') no-repeat center center/contain;
     opacity: 0.03;
     z-index: -1;
+    max-width: 100%;
 }
 
 .presence-grid {
@@ -2428,11 +2530,65 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
 
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: translateY(-5px);
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+}
 
+.whatsapp-float span {
+    position: absolute;
+    right: 75px;
+    background: #25d366;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+.whatsapp-float:hover span {
+    opacity: 1;
+    transform: translateX(-10px);
+}
 
-
-
-
-
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+    
+    .whatsapp-float span {
+        display: none; 
+    }
+}
