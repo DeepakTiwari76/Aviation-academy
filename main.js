@@ -144,40 +144,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Contact Form Logic
-    const contactForm = document.getElementById('contact-page-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Basic validation check
-            const inputs = contactForm.querySelectorAll('input, select, textarea');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-                if (input.hasAttribute('required') && !input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = 'red';
-                } else {
-                    input.style.borderColor = '#ddd';
-                }
-            });
+    // Generic Form Submission Switch
+    const formsToHandle = [
+        { id: 'contact-page-form', successId: 'form-success' },
+        { id: 'home-enquiry-form', successId: 'home-form-success' }
+    ];
 
-            if (isValid) {
-                // Show success message
-                const successMsg = document.getElementById('form-success');
-                if (successMsg) {
-                    successMsg.style.display = 'block';
-                    
-                    // Clear form
-                    contactForm.reset();
-                    
-                    // Hide message after 5 seconds
-                    setTimeout(() => {
-                        successMsg.style.display = 'none';
-                    }, 5000);
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyjxC42M6CUMx636gnHG-MFM5DSiIpjfyhy5NDZe9BQOO8fkvmGcihyF3-_7Z3T2dwJ/exec';
+
+    formsToHandle.forEach(formConfig => {
+        const form = document.getElementById(formConfig.id);
+        if (form) {
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const successMsg = document.getElementById(formConfig.successId);
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Show loading state
+                const originalText = submitBtn.innerText;
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerText = 'Sending...';
                 }
-            }
-        });
-    }
+
+                // Prepare form data for GAS (as URLSearchParams)
+                const formData = new FormData(form);
+                
+                // Send data
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    mode: 'no-cors', 
+                    body: new URLSearchParams(formData)
+                })
+                .then(() => {
+                    console.log(`Success! (Opaque response from GAS for ${formConfig.id})`);
+                    
+                    // Show success message
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        successMsg.innerText = 'Thank you! Your inquiry has been submitted successfully.';
+                        successMsg.style.color = '#28a745';
+                    }
+                    
+                    // Reset form and UI
+                    form.reset();
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalText;
+                    }
+                    
+                    // Hide message after 10 seconds
+                    setTimeout(() => {
+                        if (successMsg) successMsg.style.display = 'none';
+                    }, 10000);
+                })
+                .catch(error => {
+                    console.error('Submission Error!', error.message);
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        successMsg.innerText = 'Something went wrong. Please try again.';
+                        successMsg.style.color = '#dc3545';
+                    }
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalText;
+                    }
+                });
+            });
+        }
+    });
 });

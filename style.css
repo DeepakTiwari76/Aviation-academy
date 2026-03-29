@@ -1357,6 +1357,47 @@ body.nav-active {
     font-size: 22px;
 }
 
+/* Course Detail Grid (New 2-Column Layout) */
+.courses-detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: stretch;
+}
+
+.course-feature-card.detailed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.course-feature-card.detailed img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.course-feature-card.detailed h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.course-feature-card.detailed h3 {
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+@media (max-width: 992px) {
+    .courses-detailed-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
 .dgca-badge {
     display: inline-block;
     border: 2px solid var(--primary-color);
