@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Template | FlyHigh Institute Blog</title>
+    <meta name="description" content="A responsive blog article template for FlyHigh Institute, designed for aviation training content with related courses and clear article structure.">
+    <meta name="keywords" content="article template, aviation blog template, responsive blog layout, FlyHigh Institute article, blog content structure">
+    <link rel="canonical" href="https://flyhighinstitute.org/article-template.html">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .article-page main {
+            padding: 50px 0 80px;
+            background: #fff;
+        }
+
+        .article-hero {
+            text-align: center;
+            padding: 48px 22px;
+            background: rgba(0, 45, 98, 0.06);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .article-hero h1 {
+            font-size: clamp(2.6rem, 4vw, 3.6rem);
+            margin-bottom: 14px;
+        }
+
+        .article-hero p {
+            max-width: 900px;
+            margin: 0 auto;
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+
+        .article-meta {
+            color: #6b6b6b;
+            margin-top: 18px;
+            font-size: 0.95rem;
+        }
+
+        .article-layout {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.65fr 0.95fr;
+            gap: 30px;
+            padding: 36px 0;
+        }
+
+        .article-body {
+            background: #fafafa;
+            padding: 32px;
+            border-radius: 18px;
+            border: 1px solid #e8e8ed;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .article-body h2,
+        .article-body h3 {
+            margin-top: 28px;
+            margin-bottom: 14px;
+        }
+
+        .article-body p,
+        .article-body li {
+            color: #4f5259;
+            line-height: 1.85;
+        }
+
+        .article-body ul {
+            list-style: disc inside;
+            margin: 18px 0;
+        }
+
+        .sidebar-card {
+            background: #fff;
+            padding: 26px;
+            border-radius: 18px;
+            border: 1px solid #e8e8ed;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 18px;
+        }
+
+        .related-list li {
+            margin-bottom: 12px;
+        }
+
+        .related-list a {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 980px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                row-gap: 1rem;
+            }
+
+            .nav-cta {
+                margin-top: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-overlay"></div>
+    <header id="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:+918851015776"><i class="fas fa-phone"></i> +91 8851015776</a>
+                    <a href="mailto:info@flyhighinstitute.org"><i class="fas fa-envelope"></i> info@flyhighinstitute.org</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="FLYHIGH INSTITUTE Logo" class="header-logo"></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="contact.html#contact-page-form" class="btn btn-secondary">Apply Now</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="article-page">
+        <section class="article-hero">
+            <div class="container">
+                <h1>Blog Article Template for FlyHigh Institute</h1>
+                <p>This responsive blog layout provides a strong structure for long-form content, with a prominent headline, meta information, and a sidebar of related aviation courses.</p>
+                <p class="article-meta">Author: FlyHigh Institute Editorial | Updated: June 2026 | Category: Career Advice</p>
+            </div>
+        </section>
+
+        <div class="container article-layout">
+            <article class="article-body">
+                <h2>Structured Content for Aviation Readers</h2>
+                <p>Use this article template to publish high-quality, search-optimized posts that are easy to read on desktop and mobile. Each section should include clear headings, breakouts, and bullet points for improved user engagement.</p>
+
+                <h3>Recommended Section Layout</h3>
+                <ul>
+                    <li>Introduction with purpose and key takeaways.</li>
+                    <li>Background details or industry context.</li>
+                    <li>Step-by-step guidance or practical advice.</li>
+                    <li>Actionable tips and checklist items.</li>
+                    <li>Conclusion that ties everything together.</li>
+                </ul>
+
+                <h3>Formatting Guidelines</h3>
+                <p>Optimize each article for readers and search engines with the following elements:</p>
+                <ul>
+                    <li>Clear H1 title that includes the target keyword.</li>
+                    <li>Subheadings for readability and content organization.</li>
+                    <li>Short paragraphs and bulleted lists for mobile users.</li>
+                    <li>Related course links to improve page authority and internal navigation.</li>
+                </ul>
+
+                <h3>Sample Content Block</h3>
+                <p>The aviation sector in India is evolving rapidly, and students need content that reflects current hiring trends, training expectations, and growth opportunities. A strong article helps build trust, delivers value, and supports AdSense policy requirements by offering original and informative material.</p>
+
+                <h3>How to Use This Template</h3>
+                <ul>
+                    <li>Replace the headline with a specific topic such as cabin crew training or airport operations.</li>
+                    <li>Keep the language professional yet accessible.</li>
+                    <li>Reference Indian aviation regulations, course certification, and career pathways whenever relevant.</li>
+                </ul>
+            </article>
+
+            <aside class="sidebar-card">
+                <h3>Related Courses</h3>
+                <ul class="related-list">
+                    <li><a href="courses.html#cabin">Cabin Crew Training</a></li>
+                    <li><a href="courses.html#ops">Aviation Operation Management</a></li>
+                    <li><a href="courses.html#airport">Airport Management</a></li>
+                    <li><a href="courses.html#ground">Ground Staff Management</a></li>
+                    <li><a href="courses.html#pilot">Commercial Pilot License (CPL)</a></li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <img src="images/logo.png" alt="FLYHIGH INSTITUTE Logo" class="footer-logo">
+                </div>
+                <p class="about-snippet">FlyHigh Institute publishes career-ready content for students aspiring to join the aviation industry.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> 4th Floor, I-Thum Tower B-108, Noida Sector 63, Delhi/NCR, India</li>
+                    <li><i class="fas fa-phone"></i> +91 8851015776</li>
+                    <li><i class="fas fa-envelope"></i> info@flyhighinstitute.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-strip">
+            <div class="container">
+                <p>&copy; 2026 FLYHIGH INSTITUTE Academy. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+                <p>Designed for Excellence</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
