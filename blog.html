@@ -8,6 +8,7 @@
     <meta name="description" content="Explore high-value aviation articles from FlyHigh Institute covering cabin crew careers, ground staff interview tips, and the future of aviation for students.">
     <meta name="keywords" content="aviation blog, cabin crew guide, ground staff tips, aviation industry careers, FlyHigh Institute blog">
     <link rel="canonical" href="https://flyhighinstitute.org/blog.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
         .blog-page main {
@@ -22,15 +23,26 @@
             border-bottom: 1px solid #e5e7eb;
         }
 
+        .page-hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1200px;
+        }
+
         .page-hero h1 {
             font-size: clamp(2.6rem, 4vw, 3.6rem);
             margin-bottom: 14px;
+            text-align: left;
+            max-width: 760px;
         }
 
         .page-hero p {
             max-width: 860px;
             margin: 0 auto;
             color: #4a4a4a;
+            text-align: left;
         }
 
         .blog-grid {
@@ -91,14 +103,33 @@
         }
 
         @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                align-items: flex-start;
+            .blog-grid {
+                grid-template-columns: 1fr;
             }
 
-            .nav-menu {
-                flex-wrap: wrap;
-                row-gap: 1rem;
+            .page-hero {
+                padding: 40px 16px;
+            }
+
+            .page-hero .container {
+                display: block;
+            }
+
+            .page-hero h1 {
+                font-size: clamp(2.5rem, 13vw, 5rem);
+                line-height: 0.92;
+                letter-spacing: -0.06em;
+                margin-bottom: 18px;
+                margin-top: 36px;
+                max-width: 100%;
+                text-align: left;
+            }
+
+            .page-hero p {
+                max-width: 100%;
+                font-size: 1.05rem;
+                line-height: 1.6;
+                margin: 0;
             }
 
             .nav-cta {
@@ -124,11 +155,15 @@
                 <div class="logo">
                     <a href="index.html"><img src="images/logo.png" alt="FLYHIGH INSTITUTE Logo" class="header-logo"></a>
                 </div>
+                <div class="mobile-top-logo">
+                    <img src="images/logono1.png" alt="Mobile Brand Logo">
+                </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="blog.html" class="active">Blog</a></li>
+                    <!-- <li><a href="gallery.html">Gallery</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-cta">
@@ -195,7 +230,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="courses.html">Courses</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <!-- <li><a href="gallery.html">Gallery</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>

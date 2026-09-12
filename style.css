@@ -61,9 +61,9 @@ ul {
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    border-radius: 5px;
+    border-radius: 0;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: none;
     font-size: 14px;
     cursor: pointer;
     transition: var(--transition-smooth);
@@ -93,59 +93,61 @@ ul {
 }
 
 .main-nav {
-    order: 1;
+    order: 2;
     background-color: var(--accent-color);
-    padding: 15px 0;
+    padding: 6px 0;
 }
 
 .top-bar {
-    order: 2;
+    order: 1;
     background-color: var(--primary-color);
     color: var(--accent-color);
     padding: 8px 0;
     font-size: 13px;
 }
 
-.top-bar .contact-info a {
-    margin-right: 25px;
-    color: var(--accent-color);
-    text-decoration: none;
-    background: rgba(212, 175, 55, 0.1);
-    padding: 6px 16px;
-    border-radius: 50px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    font-weight: 700;
-    display: inline-flex;
+.top-bar .contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    transition: var(--transition-smooth);
-    font-size: 14px;
-    animation: heartbeat 3s infinite;
+    width: 100%;
+    gap: 18px;
 }
 
-@keyframes heartbeat {
-    0% { transform: scale(1); }
-    5% { transform: scale(1.1); }
-    10% { transform: scale(1); }
-    15% { transform: scale(1.1); }
-    20% { transform: scale(1); }
-    100% { transform: scale(1); }
+.top-bar .contact-info a {
+    display: inline-flex;
+    margin-right: 0;
+    font-size: 18px;
+    padding: 4px 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.top-bar .contact-info a:first-child {
+    order: 1;
+}
+
+.top-bar .contact-info a:last-child {
+    order: 2;
 }
 
 .top-bar .contact-info a i {
     margin-right: 10px;
     color: var(--secondary-color);
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .top-bar .contact-info a:hover {
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    animation-play-state: paused;
+    background: transparent;
+    color: var(--secondary-color);
+    box-shadow: none;
+    animation: none;
 }
 
 .top-bar .contact-info a:hover i {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .top-bar .social-links a {
@@ -358,16 +360,29 @@ ul {
     
     .top-bar .contact-info {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         width: 100%;
-        gap: 10px;
+        gap: 8px;
     }
 
     .top-bar .contact-info a {
         display: inline-flex;
         margin-right: 0;
-        font-size: 11px;
-        padding: 4px 10px;
+        font-size: 18px;
+        padding: 4px 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+    }
+
+    .top-bar .contact-info a:first-child {
+        order: 2;
+    }
+
+    .top-bar .contact-info a:last-child {
+        order: 1;
     }
 
     #main-header {
@@ -412,155 +427,101 @@ body.nav-active {
 
 
 /* Hero Section */
+/* Hero Section */
 .hero {
-    height: calc(100vh - 120px);
-    min-height: 600px;
-    background: url('images/hero.png') no-repeat center center/cover;
     position: relative;
-    display: flex;
-    align-items: center;
-    color: var(--accent-color);
+    width: 100%;
+    aspect-ratio: 8 / 3;
+    overflow: hidden;
+    background: #fff;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero-slider {
+    position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(0, 45, 98, 0.9) 0%, rgba(0, 45, 98, 0.4) 100%);
-    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.hero-slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: saturate(1.05);
+}
+
+.hero-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--primary-color);
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slider-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.04);
+}
+
+.hero-slider-btn.prev {
+    left: 20px;
+}
+
+.hero-slider-btn.next {
+    right: 20px;
 }
 
 .hero .container {
-    position: relative;
-    z-index: 2;
-    justify-content: flex-start;
-}
-
-.hero-content {
-    max-width: 700px;
-}
-
-.hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 25px;
-    animation: fadeInDown 0.8s ease;
-}
-
-.trust-badge {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.hero h1 {
-    font-size: 56px;
-    line-height: 1.1;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-    animation: fadeInLeft 1s ease;
-}
-
-.hero h1 span {
-    color: var(--secondary-color);
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 35px;
-    opacity: 0.9;
-    animation: fadeInLeft 1.2s ease;
-}
-
-.hero-btns {
-    display: flex;
-    gap: 20px;
-    animation: fadeInUp 1.4s ease;
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-}
-
-.btn-outline:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-}
-
-/* Animations */
-@keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    display: none;
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-
     .hero {
-        align-items: flex-start;
-        padding-top: 50px;
+        aspect-ratio: 8 / 3;
         height: auto;
-        min-height: 550px;
+        min-height: 0;
     }
 
-    .hero-content {
-        text-align: center;
-        margin: 0 auto;
+    .hero-slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
     }
 
-    .hero-badges {
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
+    .hero-slider-btn.prev {
+        left: 12px;
     }
 
-    .trust-badge {
-        font-size: 11px;
-        padding: 6px 14px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-        margin-top: 25px;
-    }
-    
-    .hero p {
-        font-size: 15px;
-    }
-    
-    .hero-btns {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-btns .btn {
-        width: 100%;
-        max-width: 300px;
+    .hero-slider-btn.next {
+        right: 12px;
     }
 }
 
@@ -1515,11 +1476,6 @@ body.nav-active {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border: 1px solid #eee;
-}
-
-.course-feature-card h3 {
-    margin-bottom: 20px;
-    font-size: 22px;
 }
 
 /* Course Detail Grid (New 2-Column Layout) */
@@ -2933,7 +2889,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .top-bar .contact-info a {
-        font-size: 10px;
+        font-size: 18px;
         padding: 3px 8px;
         letter-spacing: -0.2px;
         white-space: nowrap;
@@ -2941,7 +2897,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .top-bar .contact-info a i {
         margin-right: 5px;
-        font-size: 11px;
+        font-size: 20px;
     }
 }
 
@@ -3076,6 +3032,58 @@ h1, h2, h3, h4, h5, h6 {
 
     .circle-item.main-circle {
         transform: none;
+    }
+}
+
+/* Hide extra mobile logo on desktop and show it only in the mobile navbar */
+.mobile-top-logo {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .main-nav .container {
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .mobile-top-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 2;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mobile-top-logo img {
+        display: block;
+        height: 52px;
+        width: auto;
+    }
+
+    .hamburger {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden on the right */
+        width: 60%; /* Slightly more than half for better UX */
+        height: 100vh;
+        background: var(--accent-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+        transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        padding: 80px 40px;
     }
 }
 

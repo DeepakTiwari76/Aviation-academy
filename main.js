@@ -214,4 +214,45 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // Hero Carousel Logic
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        const track = heroSlider.querySelector('.hero-slider-track');
+        const slides = Array.from(track.children);
+        const prevBtn = heroSlider.querySelector('.hero-slider-btn.prev');
+        const nextBtn = heroSlider.querySelector('.hero-slider-btn.next');
+        let activeIndex = 0;
+        let autoPlayId;
+
+        const updateSlider = (index) => {
+            activeIndex = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${activeIndex * 100}%)`;
+        };
+
+        const restartAutoPlay = () => {
+            if (autoPlayId) {
+                clearInterval(autoPlayId);
+            }
+            autoPlayId = setInterval(() => {
+                updateSlider(activeIndex + 1);
+            }, 3000);
+        };
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                updateSlider(activeIndex - 1);
+                restartAutoPlay();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                updateSlider(activeIndex + 1);
+                restartAutoPlay();
+            });
+        }
+
+        restartAutoPlay();
+    }
 });
